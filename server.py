@@ -49,9 +49,9 @@ def send_commands(conn):
             conn.close()
             s.close()
             sys.exit()
-        if len(str.encode(cmd)) > 0:
-            conn.send(str.encode(cmd))
-            client_reponse = str(conn.recv(1024),"utf-8")
+        if len(str.encode(cmd)) > 0:# encoding into bit and getting the length 
+            conn.send(str.encode(cmd))#conn.send sending connecction to another users computer
+            client_reponse = str(conn.recv(1024),"utf-8")# can't string so we need to encode into bit formatt
             print(client_reponse, end="")
 
 
